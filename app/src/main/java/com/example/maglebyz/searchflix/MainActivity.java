@@ -8,6 +8,10 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.maglebyz.searchflix.FinalResult.Movie;
+import com.example.maglebyz.searchflix.SearchResult.SearchResults;
+import com.google.gson.Gson;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -18,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
     EditText searchWord;
     String currentSearch;
     String api_key = "87ed38f4be1ea577e1f8903bc35d958150373d7d";
+    SearchResults currentResults;
+    Movie currentMovie;
+    Gson gson = new Gson();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +42,12 @@ public class MainActivity extends AppCompatActivity {
             //hasFocus = false;
                 if (!hasFocus) {
                     currentSearch = searchWord.getText().toString();
-                    searchMovie(currentSearch);
+                    new Thread() {
+                        @Override
+                        public void run() {
+                            searchQuery(currentSearch);
+                        }
+                    }.start();
                 }
             }
         });
@@ -51,22 +63,42 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    protected void searchMovie(String search){
+    protected void searchQuery(String search) {
         String startURL = "http://api-public.guidebox.com/v2/search";
         String apikeyURL = "?api_key=" + api_key;
         String searchType = "&type=movie";
         String searchField = "&field=title";
         String searchNoSpace = search.replace(" ", "%20");
-        String searchQuery = "&query="+ searchNoSpace;
+        String searchQuery = "&query=" + searchNoSpace;
         String wholeURL = startURL + apikeyURL + searchType + searchField + searchQuery;
         String results = "";
+        try {
+            results = getHTML(wholeURL);
+        } catch (Exception e) {
+            e.printStackTrace();
+            results = "error";
+        }
+        if (results != "error") {
+            currentResults = gson.fromJson(results, SearchResults.class);
+        }
+    }
+
+    protected void searchMovie(int idNum){
+        String startURL = "http://api-public.guidebox.com/v2/movies";
+        String idURL = "/" + Integer.toString(idNum);
+        String apikeyURL = "?api_key=" + api_key;
+        String wholeURL = startURL + idURL + apikeyURL;
+        String results = "";
         try{
-             results = getHTML(wholeURL);
+            results = getHTML(wholeURL);
         }
         catch(Exception e){
-             results = "Error";
+            e.printStackTrace();
+            results = "error";
         }
-        String debug = results;
+        if(results != "error"){
+            currentMovie = gson.fromJson(results, Movie.class);
+        }
     }
 
     public static String getHTML(String urlToRead) throws Exception {
