@@ -1,5 +1,6 @@
 package com.example.maglebyz.searchflix;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
         searchWord.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -80,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if (results != "error") {
             currentResults = gson.fromJson(results, SearchResults.class);
+            Intent i = new Intent(this, SearchActivity.class);
+            i.putExtra("passObject", currentResults);
+            startActivity(i);
         }
     }
 
