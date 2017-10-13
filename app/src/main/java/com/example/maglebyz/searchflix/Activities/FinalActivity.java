@@ -30,38 +30,23 @@ public class FinalActivity extends AppCompatActivity {
         setMovieYear(currentMovie);
         setMovieRating(currentMovie);
         setMovieLength(currentMovie);
-        //setSubscriptions(currentMovie);
+        setAdapter();
+        setSubscriptions(currentMovie);
+        setPayment(currentMovie);
     }
 
-//    private void setSubscriptions(Movie currentMovie) {
-//        List<SubscriptionWebSource> subs = currentMovie.getSubscriptionWebSources();
-//        //RecyclerView sources = (RecyclerView)findViewById(R.id.sources);
-//        List<String> sourceTitles = new ArrayList<>();
-//        for(int i = 0; i<subs.size(); i++){
-//            sourceTitles.add(i, subs.get(i).getDisplayName());
-//        }
-//
-//        LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
-//        //sources.setLayoutManager(mLayoutManager);
-//
-//        RecyclerView.Adapter a = new RecyclerView.Adapter<>() {
-//            @Override
-//            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//                return null;
-//            }
-//
-//            @Override
-//            public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-//
-//            }
-//
-//            @Override
-//            public int getItemCount() {
-//                return 0;
-//            }
-//        };
-//        //sources.setAdapter(adapt);
-//    }
+    private void setAdapter() {
+
+    }
+
+    private void setPayment(Movie currentMovie) {
+
+    }
+
+
+    private void setSubscriptions(Movie currentMovie) {
+
+    }
 
     private void setMovieTitle(Movie currentMovie){
         String movieTitle = "Unknown";
