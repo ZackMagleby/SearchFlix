@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     String currentSearch;
     String api_key = "87ed38f4be1ea577e1f8903bc35d958150373d7d";
     SearchResults currentResults;
-    Movie currentMovie;
     Gson gson = new Gson();
 
     @Override
@@ -47,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             searchQuery(currentSearch);
+                            if(currentResults.getResults().size()>0){
+                                Intent i = new Intent(MainActivity.this, SearchActivity.class);
+                                i.putExtra("passObject", currentResults);
+                                startActivity(i);
+                            }
+                            else{
+                                //ERROR
+                            }
                         }
                     }.start();
                 }
@@ -82,27 +89,6 @@ public class MainActivity extends AppCompatActivity {
         }
         if (results != "error") {
             currentResults = gson.fromJson(results, SearchResults.class);
-            Intent i = new Intent(this, SearchActivity.class);
-            i.putExtra("passObject", currentResults);
-            startActivity(i);
-        }
-    }
-
-    protected void searchMovie(int idNum){
-        String startURL = "http://api-public.guidebox.com/v2/movies";
-        String idURL = "/" + Integer.toString(idNum);
-        String apikeyURL = "?api_key=" + api_key;
-        String wholeURL = startURL + idURL + apikeyURL;
-        String results = "";
-        try{
-            results = getHTML(wholeURL);
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            results = "error";
-        }
-        if(results != "error"){
-            currentMovie = gson.fromJson(results, Movie.class);
         }
     }
 
