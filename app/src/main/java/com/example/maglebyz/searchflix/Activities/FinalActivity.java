@@ -6,16 +6,35 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.maglebyz.searchflix.FinalRecycler.SubAdapter;
 import com.example.maglebyz.searchflix.FinalResult.Movie;
+import com.example.maglebyz.searchflix.FinalResult.PurchaseAndroidSource;
+import com.example.maglebyz.searchflix.FinalResult.PurchaseWebSource;
+import com.example.maglebyz.searchflix.FinalResult.SubscriptionWebSource;
 import com.example.maglebyz.searchflix.R;
+import com.example.maglebyz.searchflix.SearchRecycler.ClickListener;
+import com.example.maglebyz.searchflix.SearchRecycler.DividerItemDecoration;
+import com.example.maglebyz.searchflix.SearchRecycler.RecyclerTouchListener;
+import com.example.maglebyz.searchflix.SearchRecycler.SearchAdapter;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FinalActivity extends AppCompatActivity {
+
+    private SubAdapter nAdapter;
+    private RecyclerView recyclerView2;
+    List<String> services = new ArrayList<>();
+    List<String> prices = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +49,58 @@ public class FinalActivity extends AppCompatActivity {
         setMovieYear(currentMovie);
         setMovieRating(currentMovie);
         setMovieLength(currentMovie);
-        setAdapter();
+
+        recyclerView2 = (RecyclerView) findViewById(R.id.recycler_view_final);
+
+        nAdapter = new SubAdapter(services, prices);
+
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView2.setLayoutManager(mLayoutManager);
+        recyclerView2.setItemAnimator(new DefaultItemAnimator());
+        recyclerView2.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+//        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
+//            @Override
+//            public void onClick(View view, int position) {
+//                //Result movie = results.get(position);
+//                buttonClicked(position);
+//                //Toast.makeText(getApplicationContext(), movie.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
+//            }
+//
+//            @Override
+//            public void onLongClick(View view, int position) {
+//
+//            }
+//        }));
+        recyclerView2.setAdapter(nAdapter);
         setSubscriptions(currentMovie);
         setPayment(currentMovie);
-    }
-
-    private void setAdapter() {
-
+        nAdapter.notifyDataSetChanged();
     }
 
     private void setPayment(Movie currentMovie) {
-
+        List<PurchaseWebSource> buySources = currentMovie.getPurchaseWebSources();
+        services.add("Rent/Purchase: ");
+        prices.add(" ");
+        for(int i = 0; i<buySources.size(); i++){
+            services.add(buySources.get(i).getDisplayName());
+            String totalPrices = "";
+            for(int j = 0; j<buySources.get(i).getFormats().size(); j++){
+                totalPrices += buySources.get(i).getFormats().get(j).getType().substring(0,1).toUpperCase() + buySources.get(i).getFormats().get(j).getType().substring(1) + "("+ buySources.get(i).getFormats().get(j).getFormat() +"): " + buySources.get(i).getFormats().get(j).getPrice() + "\n";
+            }
+            prices.add(totalPrices);
+        }
     }
 
 
     private void setSubscriptions(Movie currentMovie) {
-
+        List<SubscriptionWebSource> subSources = currentMovie.getSubscriptionWebSources();
+        services.add("Subscriptions: ");
+        prices.add(" ");
+        for(int i = 0; i<subSources.size(); i++){
+            services.add(subSources.get(i).getDisplayName());
+            prices.add("Subscription to: " + subSources.get(i).getDisplayName());
+        }
     }
 
     private void setMovieTitle(Movie currentMovie){

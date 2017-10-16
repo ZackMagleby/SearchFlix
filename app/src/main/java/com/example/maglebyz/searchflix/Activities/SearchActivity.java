@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.maglebyz.searchflix.FinalResult.Movie;
+import com.example.maglebyz.searchflix.FinalResult.NewMovie;
 import com.example.maglebyz.searchflix.R;
 import com.example.maglebyz.searchflix.SearchRecycler.ClickListener;
 import com.example.maglebyz.searchflix.SearchRecycler.DividerItemDecoration;
@@ -71,6 +72,7 @@ public class SearchActivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
         prepareMovieData();
+        mAdapter.notifyDataSetChanged();
     }
 
     private void prepareMovieData() {
@@ -86,9 +88,11 @@ public class SearchActivity extends AppCompatActivity {
             public void run() {
                 if(selectedIndex >= 0){
                     searchMovie(currentResults.getResults().get(selectedIndex).getId());
-                    Intent i2 = new Intent(SearchActivity.this, FinalActivity.class);
-                    i2.putExtra("passObject2", currentMovie);
-                    startActivity(i2);
+                    if(currentMovie != null){
+                        Intent i2 = new Intent(SearchActivity.this, FinalActivity.class);
+                        i2.putExtra("passObject2", currentMovie);
+                        startActivity(i2);
+                    }
                 }
             }
         }.start();
@@ -107,8 +111,14 @@ public class SearchActivity extends AppCompatActivity {
             e.printStackTrace();
             results = "error";
         }
-        if(results != "error"){
-            currentMovie = gson.fromJson(results, Movie.class);
+        if(results != "error") {
+            try {
+                currentMovie = gson.fromJson(results, Movie.class);
+            }
+            catch (Exception e){
+                currentMovie = null;
+                this.finish();
+            }
         }
     }
 

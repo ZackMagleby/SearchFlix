@@ -13,20 +13,22 @@ import java.util.List;
 public class SubAdapter extends RecyclerView.Adapter<SubAdapter.MyViewHolder> {
 
     private List<String> serviceList;
+    private List<String> priceList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title, price;
 
         public MyViewHolder(View view) {
             super(view);
-            title = (TextView) view.findViewById(R.id.title);
+            title = (TextView) view.findViewById(R.id.name);
             price = (TextView) view.findViewById(R.id.price);
         }
     }
 
 
-    public SubAdapter(List<String> serviceList) {
+    public SubAdapter(List<String> serviceList, List<String> priceList) {
         this.serviceList = serviceList;
+        this.priceList = priceList;
     }
 
     @Override
@@ -40,7 +42,7 @@ public class SubAdapter extends RecyclerView.Adapter<SubAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.title.setText(serviceList.get(position));
-        //holder.genre.setText(movie.getGenre());
+        holder.price.setText(priceList.get(position));
     }
 
     @Override
