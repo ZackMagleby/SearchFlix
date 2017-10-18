@@ -81,7 +81,12 @@ public class FinalActivity extends AppCompatActivity {
     private void setPayment(Movie currentMovie) {
         List<PurchaseWebSource> buySources = currentMovie.getPurchaseWebSources();
         services.add("Rent/Purchase: ");
-        prices.add(" ");
+        if(buySources.size() == 0){
+            prices.add("None");
+        }
+        else{
+            prices.add(" ");
+        }
         for(int i = 0; i<buySources.size(); i++){
             services.add(buySources.get(i).getDisplayName());
             String totalPrices = "";
@@ -96,7 +101,12 @@ public class FinalActivity extends AppCompatActivity {
     private void setSubscriptions(Movie currentMovie) {
         List<SubscriptionWebSource> subSources = currentMovie.getSubscriptionWebSources();
         services.add("Subscriptions: ");
-        prices.add(" ");
+        if(subSources.size() == 0){
+            prices.add("None");
+        }
+        else{
+            prices.add(" ");
+        }
         for(int i = 0; i<subSources.size(); i++){
             services.add(subSources.get(i).getDisplayName());
             prices.add("Subscription to: " + subSources.get(i).getDisplayName());
