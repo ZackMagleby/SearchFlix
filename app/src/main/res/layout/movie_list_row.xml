@@ -13,15 +13,16 @@
 
     <TextView
         android:id="@+id/name"
-        android:textColor="@color/title"
+        android:textColor="@color/text"
         android:textSize="16dp"
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
  />
 
-    <TextView
+        <TextView
         android:id="@+id/price"
+        android:textColor="@color/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="right"

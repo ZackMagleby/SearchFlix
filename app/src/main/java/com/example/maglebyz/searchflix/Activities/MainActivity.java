@@ -7,6 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.maglebyz.searchflix.R;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ImageView iv = (ImageView) findViewById(R.id.imageView3);
+        iv.setImageResource(R.drawable.logo2);
 
         searchWord = (EditText) findViewById(R.id.searchName);
         searchWord.setOnFocusChangeListener(new EditText.OnFocusChangeListener() {

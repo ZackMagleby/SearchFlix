@@ -3,6 +3,9 @@ package com.example.maglebyz.searchflix.SearchRecycler;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,6 +34,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         mDivider = a.getDrawable(0);
         a.recycle();
         setOrientation(orientation);
+        mDivider.setColorFilter(0xffffffff, PorterDuff.Mode.MULTIPLY);
     }
 
     public void setOrientation(int orientation) {

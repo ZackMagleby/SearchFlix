@@ -75,6 +75,7 @@ public class FinalActivity extends AppCompatActivity {
         recyclerView2.setAdapter(nAdapter);
         setSubscriptions(currentMovie);
         setPayment(currentMovie);
+        recyclerView2.setItemViewCacheSize(services.size());
         nAdapter.notifyDataSetChanged();
     }
 
