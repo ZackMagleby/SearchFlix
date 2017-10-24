@@ -3,6 +3,7 @@ package com.example.maglebyz.searchflix.Activities;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ public class FinalActivity extends AppCompatActivity {
     private RecyclerView recyclerView2;
     List<String> services = new ArrayList<>();
     List<String> prices = new ArrayList<>();
+    List<String> links = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,19 +61,17 @@ public class FinalActivity extends AppCompatActivity {
         recyclerView2.setLayoutManager(mLayoutManager);
         recyclerView2.setItemAnimator(new DefaultItemAnimator());
         recyclerView2.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-//        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
-//            @Override
-//            public void onClick(View view, int position) {
-//                //Result movie = results.get(position);
-//                buttonClicked(position);
-//                //Toast.makeText(getApplicationContext(), movie.getTitle() + " is selected!", Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onLongClick(View view, int position) {
-//
-//            }
-//        }));
+        recyclerView2.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView2, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                buttonClicked(position);
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
         recyclerView2.setAdapter(nAdapter);
         setSubscriptions(currentMovie);
         setPayment(currentMovie);
@@ -79,15 +79,24 @@ public class FinalActivity extends AppCompatActivity {
         nAdapter.notifyDataSetChanged();
     }
 
+    private void buttonClicked(int position) {
+        String link = links.get(position);
+        if(link != null || link != ""){
+            Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        }
+    }
+
     private void setPayment(Movie currentMovie) {
         List<PurchaseWebSource> buySources = currentMovie.getPurchaseWebSources();
-        services.add("Rent/Purchase: ");
-        if(buySources.size() == 0){
-            prices.add("None");
-        }
-        else{
-            prices.add(" ");
-        }
+//        services.add("Rent/Purchase: ");
+//        if(buySources.size() == 0){
+//            prices.add("None");
+//        }
+//        else{
+//            prices.add(" ");
+//        }
         for(int i = 0; i<buySources.size(); i++){
             services.add(buySources.get(i).getDisplayName());
             String totalPrices = "";
@@ -95,22 +104,24 @@ public class FinalActivity extends AppCompatActivity {
                 totalPrices += buySources.get(i).getFormats().get(j).getType().substring(0,1).toUpperCase() + buySources.get(i).getFormats().get(j).getType().substring(1) + "("+ buySources.get(i).getFormats().get(j).getFormat() +"): " + buySources.get(i).getFormats().get(j).getPrice() + "\n";
             }
             prices.add(totalPrices);
+            links.add(buySources.get(i).getLink());
         }
     }
 
 
     private void setSubscriptions(Movie currentMovie) {
         List<SubscriptionWebSource> subSources = currentMovie.getSubscriptionWebSources();
-        services.add("Subscriptions: ");
-        if(subSources.size() == 0){
-            prices.add("None");
-        }
-        else{
-            prices.add(" ");
-        }
+//        services.add("Subscriptions: ");
+//        if(subSources.size() == 0){
+//            prices.add("None");
+//        }
+//        else{
+//            prices.add(" ");
+//        }
         for(int i = 0; i<subSources.size(); i++){
             services.add(subSources.get(i).getDisplayName());
             prices.add("Subscription to: " + subSources.get(i).getDisplayName());
+            links.add(subSources.get(i).getLink());
         }
     }
 
