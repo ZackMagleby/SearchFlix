@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\User\.android\build-cache\b64792badebff1b9509b2ad718d28da4c248e6b1\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
+        <dex dex="C:\Users\User\Desktop\searchflix\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bacc06613ffadca0f97fb36072d5e4e9222c441f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\User\Desktop\searchflix\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
