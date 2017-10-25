@@ -2,31 +2,157 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\searchflix\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="26.0.2"
-        sha1="810597281afe3bc2d1650651c6b88e9a84bd61cf">
-        <dex dex="C:\Users\User\Desktop\searchflix\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d20d6b1a0b33075dbcecf138ba4252f5ea6d8e53\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\User\.android\build-cache\b64792badebff1b9509b2ad718d28da4c248e6b1\output\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\ffe59c5eb7fb04aae98571006bc79bad317ed5d8\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="C:\Users\User\Desktop\searchflix\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bacc06613ffadca0f97fb36072d5e4e9222c441f\classes.dex" />
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_f370ebeb5982fec060f9e10f048ab562c6ef39cd.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\User\Desktop\searchflix\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\e4de0ec8d5b09925da85036d018e882111f1b803\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\User\Desktop\searchflix\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d7499f15cc2847cba790d64486a3d79f159b46cc\classes.dex" />
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_b30d2726f7c17ac348acdc7af0a3a41f14217efb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\0a37e7fcb483fcff957d9e2626dc59c7395e4b70\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_3d56515b04c3e18e29b06245b88aa0829c0b4895.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.1\2a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0\gson-2.8.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="02a8e0aa38a2e21cb39e2f5a7d6704cbdc941da0">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\gson-2.8.1_c9cbf09aaf5df147553226e44c1a9672d1027ff9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\b98420ce32e68aa42a6525c6994cf71a8f3e74a4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_eecb26d800b89609402c5656b3bb83b4fc9c3083.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\ddb12d3ae6c5d4221ef374e77220b5a898ee7b8d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_f51a228b5cddab2698997a2c66f3c4f0b68306b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\f182fbd1b38082050afbdfae75a1514b4c9de241\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_64cc4a7a159aa80342180e7fd84a1bc7216d9f87.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\92099843ae08aca8f577fec4990ce4731c4ba9c0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_38938f77e32c6768e9f0a3627247b7ba1690afed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\f9e1864af49f30c4d46f7a9e391fbdfe279575a1\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_afb556aa16457014b2598c8daa30de67aee01efd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_b13d52a293653fb108b0dabd16ef4f5ac2cefe3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\3da2239bab14377513a33ddddb9abac06fab3ae8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_d1fb24a178bb952c0e983eef3404b634d57d84b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\39424552ac5a27a04f5433eafd649a41c54eb333\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_df8a1999667f6ea64d7251f76b21ff026442966b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\b09cc0dc481b892545c43e2726656c7164b46e9a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_b5f98bd6cfd892dfb6e5ff18b5494db8ea97abb3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\a9f28a23d6ff90e46fa9e3c76d67ec4f3986dd95\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_a501d8c94c312064ff67f5d2bd91d84bbfc94e45.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\47d48d60126a91b19d67ccabeeb89706159a00a6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_114a2b8540a69678dd6aed4abafdb918c6ed5fb2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_c694ffa3215be7a922878e4bc8a48d0ebe2a212d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\maglebyz\.android\build-cache\12040050e79ad0a7cb7f978602871063d1d62e9c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\maglebyz\Desktop\searchflix\app\build\intermediates\pre-dexed\debug\classes_55025135497cff436ce382ace0f8f7ff3aec4bd1.jar" />
     </item>
 
 </items>

@@ -118,8 +118,23 @@ public class SearchActivity extends AppCompatActivity {
             }
             catch (Exception e){
                 currentMovie = null;
+                runOnUiThread(new Runnable() {
+                    public void run()
+                    {
+                        Toast.makeText(SearchActivity.this, "Movie too new.  Not enough info on database.  Try checking your local theaters?", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 this.finish();
             }
+        }
+        else{
+            runOnUiThread(new Runnable() {
+                public void run()
+                {
+                    Toast.makeText(SearchActivity.this, "There was an error. Try again.", Toast.LENGTH_SHORT).show();
+                }
+            });
+            this.finish();
         }
     }
 

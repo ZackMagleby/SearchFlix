@@ -9,6 +9,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.maglebyz.searchflix.R;
 import com.example.maglebyz.searchflix.SearchResult.SearchResults;
@@ -93,6 +94,14 @@ public class MainActivity extends AppCompatActivity {
         }
         if (results != "error") {
             currentResults = gson.fromJson(results, SearchResults.class);
+        }
+        else{
+            runOnUiThread(new Runnable() {
+                public void run()
+                {
+                    Toast.makeText(MainActivity.this, "There was an error. Try again.", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
